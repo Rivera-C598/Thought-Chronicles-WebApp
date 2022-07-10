@@ -1,0 +1,85 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-image: url(../lib/Images/bg-sunlight.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.navbar {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 50;
+}
+
+td a {
+    color: black;
+    padding: 5px;
+    display: block;
+}
+td a:link {
+    color: black;
+    text-decoration: none;
+} 
+td a:visited {
+    color: black;
+    text-decoration: none;
+     
+}
+hr {
+    display: block;
+    margin-top: 0.3em;
+    margin-bottom: 0.10em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+#customHR {
+    margin-top: 0.3em;
+    margin-bottom: 0.10em;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+#loginRegisterBorders {
+    border-radius: 5px 50px;
+}
+#cardBorders {
+    border-radius: 15%;
+}
+.space-between {
+    display: flex;
+    justify-content: space-between;
+}
+.searchBox::before {
+    display: block;
+}
+.card {
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.form-control {
+    background-color: transparent;
+    border: 1px inset;
+}
+.form-control:focus {
+    border-color: antiquewhite;
+    background-color: transparent;
+}

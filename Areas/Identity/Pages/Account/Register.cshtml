@@ -1,0 +1,39 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div id="loginRegisterBorders" class="row justify-content-center border mx-auto shadow mb-3" style="max-width: 500px; backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.2);
+    -webkit-backdrop-filter: blur(14px)">
+        <form class="pt-3"id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2 class="text-center mb-4">Welcome! <br /> Create a new account.</h2>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-outline-mb-4">
+                <label asp-for="Input.UserName">User Name</label>
+                <input asp-for="Input.UserName" class="form-control" autocomplete="off" aria-required="true"/>
+            </div>
+            <div class="form-outline-mb-4 mt-2">
+                <label asp-for="Input.Email"></label>
+                <input asp-for="Input.Email" class="form-control" autocomplete="off" aria-required="true"  placeholder="name@example.com"/>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-outline-mb-4 mt-2">
+                <label asp-for="Input.Password"></label>
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-outline-mb-4 mt-2">
+                <label asp-for="Input.ConfirmPassword"></label>
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+                <button id="registerSubmit" type="submit" class="btn btn-success btn-block mb-4 mt-3">Register</button>
+        </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

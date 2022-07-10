@@ -1,0 +1,64 @@
+﻿@model ThoughtChroniclesWebApp.Models.QnA
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="card mx-auto shadow mb-3 rounded" style="max-width: 550px">
+  <div class="card-header" style="float: left">
+    <a asp-action="Index"><i class="fa-solid fa-circle-arrow-left fa-2x"></i></a>
+  </div>
+    <div class="card-body">
+     <h1 class="text-center">Contribute!</h1>
+
+     <div style="width: 100%">
+        <form asp-action="Create">
+
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="row"> 
+            <div class="form-group col">
+                <label asp-for="TypeOfQuestion" class="control-label">Type of Question</label>
+                <select class="form-control" id="TypeOfQuestion" name="TypeOfQuestion">
+                <option disabled selected>Please select a type of question...</option>
+                <option>Random</option> 
+                <option>Meme</option> 
+                <option>Game</option> 
+                <option>Riddle</option>
+                <option>Joke</option>
+                <option>Pickup-Line</option>
+                <option>Math</option>
+                <option>Science</option>
+                </select>
+                <span asp-validation-for="TypeOfQuestion" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col">
+                <label asp-for="Author" class="control-label">Contributed by:</label>
+                <input asp-for="Author" class="form-control" value="@User.Identity.Name" readonly/>
+                <span asp-validation-for="Author" class="text-danger"></span>
+            </div>
+          </div> 
+
+            <div class="form-group">
+                <label asp-for="Questions" class="control-label"></label>
+                <textarea asp-for="Questions" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Questions" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Answers" class="control-label">Answer</label>
+                <textarea asp-for="Answers" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Answers" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success btn-block" /> 
+            </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

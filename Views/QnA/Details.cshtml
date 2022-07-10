@@ -1,0 +1,28 @@
+﻿@model ThoughtChroniclesWebApp.Models.QnA
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="mx-auto">
+    <h3 class="display-6 text-center">@Html.DisplayFor(model => model.TypeOfQuestion) question details</h3>
+</div>
+
+<div class="card mx-auto shadow mb-3 mt-3 rounded" style="max-width:700px">
+  <div class="m-1">
+    <a asp-action="Index" class="card-link" style="float: inline-start"><i class="fa-solid fa-circle-arrow-left fa-2x"></i></a>
+  </div>
+  <div class="card-header">
+    <p class="text-center fw-normal" style="font-size: x-large">@Html.DisplayFor(model => model.Questions)</p>
+  </div>
+  <div class="card-body text-center">
+    <p class="display-5 font-italic text-center">@Html.DisplayFor(model => model.Answers)</p>
+      <blockquote class="blockquote mt-4">
+        <footer class="blockquote-footer"><cite title="Source Title">@Html.DisplayFor(model => model.Author)</cite></footer>
+      </blockquote>
+      <div class="footer">
+        <a asp-action="Edit" asp-route-id="@Model?.ID" class="card-link" data-toggle="tooltip" data-placement="top" title="Edit?" style="float: right">
+            <i class="fa-solid fa-pen-to-square fa-2x"></i>
+            </a>
+     </div>
+  </div>
+</div>
